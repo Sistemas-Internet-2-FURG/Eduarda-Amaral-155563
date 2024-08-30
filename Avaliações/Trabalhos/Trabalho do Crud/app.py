@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, redirect, session, url_for, flash # type: ignore
 from flask_sqlalchemy import SQLAlchemy # type: ignore
 from datetime import datetime
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 app.secret_key = b'\x9a\xf1\xd3\xe4\x1f\xf8\xbd!\x12\xa2\x8a\xec\x0b\xdbJ\x8c\x90'
 
 # Configuração do banco de dados
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

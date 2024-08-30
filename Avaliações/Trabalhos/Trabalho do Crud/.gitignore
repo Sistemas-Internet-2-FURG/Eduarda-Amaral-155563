@@ -1,0 +1,4 @@
+# Desconsiderar o arquivo de banco de dados
+app.db
+
+__pycache__
