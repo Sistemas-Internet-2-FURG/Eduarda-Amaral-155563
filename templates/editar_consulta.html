@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Editar Consulta</title>
+</head>
+
+<body>
+    <h1>Editar Consulta</h1>
+    <form method="POST">
+        <label for="date_time">Data e Hora:</label>
+        <input type="datetime-local" id="date_time" name="date_time"
+            value="{{ consultation.date_time.strftime('%Y-%m-%dT%H:%M') }}" required>
+        <button type="submit">Salvar</button>
+    </form>
+    <p><a href="{{ url_for('areamedico', crm=consultation.crm) }}">Voltar</a></p>
+</body>
+
+</html>

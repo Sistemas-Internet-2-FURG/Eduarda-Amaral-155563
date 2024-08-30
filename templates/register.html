@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <h1>Cadastro</h1>
+    <form action="/register" method="post">
+        <div>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="e-mail">E-mail</label>
+            <input type="email" id="email" name="e-mail" required>
+        </div>
+        <div>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <p><a href="./login">Já possuí uma conta? Entre Agora!</a></p>
+    <p><a href="/">Voltar para a página inicial</a></p>
+</body>
+
+</html>

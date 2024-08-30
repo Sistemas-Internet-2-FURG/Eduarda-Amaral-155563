@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Agendamento de Consultas</title>
+</head>
+
+<body>
+    <h1>Agendar Consulta</h1>
+    <form action="{{ url_for('agendamento') }}" method="POST">
+        <div class="form-group">
+            <label for="specialty">Escolha a Especialidade:</label>
+            <select name="specialty" id="specialty">
+                <option value="" disabled selected>Selecione uma especialidade</option>
+                {% for specialty in specialties %}
+                <option value="{{ specialty }}">{{ specialty }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="doctor_id">Escolha o Médico:</label>
+            <select name="doctor_id" id="doctor_id">
+                <option value="" disabled selected>Selecione um médico</option>
+                {% for doctor in doctors %}
+                <option value="{{ doctor.id }}" data-specialty="{{ doctor.specialty }}">
+                    {{ doctor.name }} - {{ doctor.specialty }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <label for="date_time">Data e Hora:</label>
+        <input required type="datetime-local" id="date_time" name="date_time">
+        </div>
+        <div>
+            <button type="submit">Agendar</button>
+        </div>
+    </form>
+    <p><a href="/">Voltar para a página inicial</a></p>
+
+    <script>
+        // Função para filtrar médicos com base na especialidade selecionada
+        function filterDoctors() {
+            const specialtySelect = document.getElementById('specialty');
+            const specialty = specialtySelect.value;
+            const doctorSelect = document.getElementById('doctor_id');
+
+            // Seleciona todas as opções de médicos
+            const allOptions = doctorSelect.querySelectorAll('option[data-specialty]');
+
+            // Exibe ou oculta as opções conforme a especialidade
+            allOptions.forEach(option => {
+                if (option.getAttribute('data-specialty') === specialty || specialty === "") {
+                    option.style.display = 'block';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+
+            // Define o valor do médico como a opção padrão
+            doctorSelect.value = "doctor_id";
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const specialtySelect = document.getElementById('specialty');
+            specialtySelect.addEventListener('change', filterDoctors);
+
+            // Executa a filtragem inicial ao carregar a página
+            filterDoctors();
+        });
+    </script>
+
+</body>
+
+</html>

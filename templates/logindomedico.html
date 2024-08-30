@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Entrar na Área Médica</title>
+</head>
+
+<body>
+    <h1>Área Médica</h1>
+    <form action="{{ url_for('areamedico') }}" method="GET">
+        <div class="form-group">
+            <label for="crm">Digite o CRM do Médico:</label>
+            <input type="text" id="crm" name="crm" required>
+        </div>
+        <div>
+            <button type="submit">Buscar Agenda</button>
+        </div>
+    </form>
+    <p><a href="/">Voltar para a página inicial</a></p>
+</body>
+
+</html>

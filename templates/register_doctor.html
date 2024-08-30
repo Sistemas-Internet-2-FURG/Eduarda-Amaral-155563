@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Cadastrar Médico</title>
+</head>
+
+<body>
+
+    {% set menssagem = get_flashed_messages() %}
+    {% if menssagem %}
+    <div class="alert">
+        {{menssagem[0]}}
+    </div>
+    {% endif %}
+
+    <h2>Cadastrar Novo Médico</h2>
+    <form action="{{ url_for('register_doctor') }}" method="POST">
+        <div>
+            <label for="name">Nome do Médico:</label>
+            <input required type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="specialty">Especialidade (Área):</label>
+            <input required type="text" id="specialty" name="specialty">
+        </div>
+        <div>
+            <label for="crm">Inseri seu (CRM):</label>
+            <input required type="text" id="crm" name="crm">
+        </div>
+        <div>
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+    <br>
+    <p><a href="/">Voltar para a página inicial</a></p>
+</body>
+
+</html>

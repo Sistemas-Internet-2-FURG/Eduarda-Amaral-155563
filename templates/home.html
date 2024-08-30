@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/home.css">
+    <title>Página Inicial</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Bem-vindo(a) !</h2>
+        <p>Para agendar uma consulta, por favor, selecione "Paciente".<br> Se você é um administrador do sistema ou um
+            médico, escolha a opção correspondente.</p>
+
+        <div class="button-container">
+            <div class="botao-paciente">
+                <a href="{{ url_for('login') }}">
+                    <button>
+                        <img src="/static//images/image-paciente.jpg" alt="Image-Paciente">
+                        Paciente
+                    </button>
+                </a>
+            </div>
+
+            <div class="botao-admin">
+                <a href="{{ url_for('register_doctor') }}">
+                    <button>
+                        <img src="/static/images/image-admin.jpg" alt="Image-Admin">
+                        Admin
+                    </button>
+                </a>
+            </div>
+
+            <div class="botao-medico">
+                <a href="{{url_for('logindomedico')}}">
+                    <button>
+                        <img src="/static/images/image-medico.jpg" alt="Image-Medico">
+                        Médico
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+/* static/styles.css */
+
+/* Reseta margens e paddings padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define o estilo básico do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #004E4C;
+    color: #333;
+    padding: 20px;
+}
+
+/* Estiliza os títulos */
+h1,
+h2 {
+    color: #FFFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Centraliza o container do formulário */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFF;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estiliza os campos do formulário */
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    display: flex;
+    margin-left: 130px;
+    padding: 10px 15px;
+    background-color: #B1D34B;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#login {
+    margin-left: 145px;
+}
+
+button:hover {
+    background-color: #3e8e41;
+    text-decoration: underline #F4F4F4;
+}
+
+/* Estiliza os links */
+a {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    color: #FFFF;
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: #B1D34B;
+    text-decoration: underline;
+}
+
+select {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-actions {
+    margin-top: 20px;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li.error {
+    color: red;
+}
+
+.flashes li.success {
+    color: green;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    /* Cor de fundo */
+    color: white;
+    /* Cor do texto */
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+
+/* Tabela de Consultas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+button {
+    background-color: #3e8e41;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #B1D34B;
+}
